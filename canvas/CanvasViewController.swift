@@ -13,6 +13,7 @@ class CanvasViewController: UIViewController {
     var trayOriginalCenter: CGPoint!
     var trayUpY: CGFloat!
     var trayDownY: CGFloat = 637.0
+    var newlyCreatedFace: UIImageView!
 
     @IBAction func onTrayPanGesture(sender: UIPanGestureRecognizer) {
         let location = sender.locationInView(view)
@@ -31,6 +32,16 @@ class CanvasViewController: UIViewController {
     }
     
     @IBAction func onSmileyPanGesture(sender: UIPanGestureRecognizer) {
+        var imageView: UIImageView!
+        if (sender.state == UIGestureRecognizerState.Began) {
+            imageView = sender.view as! UIImageView
+            newlyCreatedFace = UIImageView(image: imageView.image)
+            view.addSubview(newlyCreatedFace)
+            newlyCreatedFace.center = imageView.center
+            newlyCreatedFace.center.y += trayView.frame.origin.y
+        } else if (sender.state == UIGestureRecognizerState.Changed) {
+            newlyCreatedFace.center = CGPoint(x: sender.locationInView(view).x, y: sender.locationInView(view).y)
+        }
     }
     @IBOutlet weak var trayView: UIView!
     override func viewDidLoad() {
