@@ -30,6 +30,8 @@ class CanvasViewController: UIViewController {
         }
     }
     
+    @IBAction func onSmileyPanGesture(sender: UIPanGestureRecognizer) {
+    }
     @IBOutlet weak var trayView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()

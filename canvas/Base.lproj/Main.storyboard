@@ -84,12 +84,36 @@
                         <action selector="onTrayPanGesture:" destination="BYZ-38-t0r" id="9Ct-iR-63F"/>
                     </connections>
                 </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="Rnp-kE-yAN"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="6rL-wI-zOV"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="T6O-x3-Mfa"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="sMh-aU-pbV"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="4Hp-W2-NP8"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="BUd-BQ-aId"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Rnp-kE-yAN">
+                    <connections>
+                        <action selector="onSmileyPanGesture:" destination="BYZ-38-t0r" id="TqM-1g-e3y"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="6rL-wI-zOV">
+                    <connections>
+                        <action selector="onSmileyPanGesture:" destination="BYZ-38-t0r" id="2A2-Rf-ZNu"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="T6O-x3-Mfa">
+                    <connections>
+                        <action selector="onSmileyPanGesture:" destination="BYZ-38-t0r" id="rb0-nW-R5m"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="sMh-aU-pbV">
+                    <connections>
+                        <action selector="onSmileyPanGesture:" destination="BYZ-38-t0r" id="IVg-8x-POm"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="4Hp-W2-NP8">
+                    <connections>
+                        <action selector="onSmileyPanGesture:" destination="BYZ-38-t0r" id="iN7-SP-sFQ"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="BUd-BQ-aId">
+                    <connections>
+                        <action selector="onSmileyPanGesture:" destination="BYZ-38-t0r" id="Kag-cW-01e"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="201" y="321"/>
         </scene>
