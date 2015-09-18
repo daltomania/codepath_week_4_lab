@@ -9,16 +9,26 @@
 import UIKit
 
 class CanvasViewController: UIViewController {
+    
+    var trayOriginalCenter: CGPoint!
 
+    @IBAction func onTrayPanGesture(sender: UIPanGestureRecognizer) {
+        let location = sender.locationInView(view)
+        if (sender.state == UIGestureRecognizerState.Began) {
+            trayOriginalCenter = trayView.center
+        } else if (sender.state == UIGestureRecognizerState.Changed) {
+            trayView.center.y = location.y
+        } else if (sender.state == UIGestureRecognizerState.Ended ) {
+        }
+    }
+    
+    @IBOutlet weak var trayView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
