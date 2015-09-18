@@ -11,6 +11,8 @@ import UIKit
 class CanvasViewController: UIViewController {
     
     var trayOriginalCenter: CGPoint!
+    var trayUpY: CGFloat!
+    var trayDownY: CGFloat = 637.0
 
     @IBAction func onTrayPanGesture(sender: UIPanGestureRecognizer) {
         let location = sender.locationInView(view)
@@ -19,12 +21,19 @@ class CanvasViewController: UIViewController {
         } else if (sender.state == UIGestureRecognizerState.Changed) {
             trayView.center = CGPoint(x: trayOriginalCenter.x, y: trayOriginalCenter.y + sender.translationInView(view).y)
         } else if (sender.state == UIGestureRecognizerState.Ended ) {
+            let velocity = sender.velocityInView(view)
+            if (velocity.y < 0.0) {
+                trayView.center = CGPoint(x: trayOriginalCenter.x, y: trayUpY)
+            } else if (velocity.y > 0.0) {
+                trayView.center = CGPoint(x: trayOriginalCenter.x, y: trayDownY)
+            }
         }
     }
     
     @IBOutlet weak var trayView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        trayUpY = trayView.center.y
     }
 
     override func didReceiveMemoryWarning() {
