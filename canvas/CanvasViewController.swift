@@ -17,7 +17,7 @@ class CanvasViewController: UIViewController {
         if (sender.state == UIGestureRecognizerState.Began) {
             trayOriginalCenter = trayView.center
         } else if (sender.state == UIGestureRecognizerState.Changed) {
-            trayView.center.y = location.y
+            trayView.center = CGPoint(x: trayOriginalCenter.x, y: trayOriginalCenter.y + sender.translationInView(view).y)
         } else if (sender.state == UIGestureRecognizerState.Ended ) {
         }
     }
